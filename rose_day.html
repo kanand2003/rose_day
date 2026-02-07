@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day Aryan ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      width: 400px;
+      padding: 25px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      color: #e63946;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 15px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .heart {
+      font-size: 35px;
+      color: red;
+      animation: pulse 1.5s infinite;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    button {
+      background: #e63946;
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      font-size: 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #c81d25;
+      transform: scale(1.05);
+    }
+
+    .message {
+      display: none;
+      margin-top: 15px;
+      color: #e63946;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Falling Roses */
+    .rose {
+      position: absolute;
+      top: -50px;
+      font-size: 22px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>Happy Rose Day Aryan 🌹</h1>
+
+    <!-- Your Photo -->
+    <img src="photo.jpg" alt="Khushi & Aryan" class="photo">
+
+    <div class="heart">❤️</div>
+
+    <p>
+      From <b>Khushi</b> to <b>Aryan</b> 💕<br><br>
+
+      You are my rose 🌹 —  
+      the most beautiful part of my life,  
+      the reason behind my smile,  
+      and my forever favorite person.
+    </p>
+
+    <button onclick="showMessage()">Click for Surprise 💝</button>
+
+    <div class="message" id="msg">
+      I Love You So Much Aryan 😘💖  
+      Forever Yours, Khushi 💞
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function showMessage() {
+      document.getElementById("msg").style.display = "block";
+    }
+
+    // Falling roses
+    for (let i = 0; i < 30; i++) {
+      let rose = document.createElement("div");
+      rose.classList.add("rose");
+      rose.innerHTML = "🌹";
+
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = 3 + Math.random() * 6 + "s";
+      rose.style.fontSize = 18 + Math.random() * 20 + "px";
+
+      document.body.appendChild(rose);
+    }
+
+  </script>
+
+</body>
+</html>
